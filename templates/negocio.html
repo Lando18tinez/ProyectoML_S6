@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Análisis de Negocio{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row g-4">
+        <!-- Objetivos de Negocio (mitad de pantalla) -->
+        <div class="col-12 col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-primary text-white py-2">
+                    <h5 class="mb-0">🎯 Objetivos de Negocio</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item small">Maximizar rentabilidad de inversiones</li>
+                        <li class="list-group-item small">Optimizar procesos operativos</li>
+                        <li class="list-group-item small">Incrementar participación de mercado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preguntas Clave (mitad de pantalla) -->
+        <div class="col-12 col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-success text-white py-2">
+                    <h5 class="mb-0">🔑 Preguntas Clave</h5>
+                </div>
+                <div class="card-body">
+                    <div class="accordion accordion-flush">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#preguntaNegocio">
+                                    ¿Drivers de rentabilidad?
+                                </button>
+                            </div>
+                            <div id="preguntaNegocio" class="accordion-collapse collapse">
+                                <div class="accordion-body small">
+                                    Análisis de correlación entre variables clave...
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Evaluación de Datos (tercio de pantalla) -->
+        <div class="col-12 col-md-4 mt-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-warning py-2">
+                    <h5 class="mb-0">📊 Evaluación de Datos</h5>
+                </div>
+                <div class="card-body">
+                    <div class="progress mb-2" style="height: 20px;">
+                        <div class="progress-bar" style="width: 75%">Calidad 75%</div>
+                    </div>
+                    <div class="progress" style="height: 20px;">
+                        <div class="progress-bar bg-success" style="width: 90%">Completitud 90%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Análisis de Viabilidad (dos tercios) -->
+        <div class="col-12 col-md-8 mt-3">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-danger text-white py-2">
+                    <h5 class="mb-0">📈 Análisis de Viabilidad</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h6 class="text-muted">🔧 Técnica</h6>
+                            <p class="small mb-0">Evaluación recursos tecnológicos...</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="text-muted">💵 Económica</h6>
+                            <p class="small mb-0">ROI proyectado: $2.5M</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h6 class="text-muted">⚠️ Riesgos</h6>
+                            <p class="small mb-0">15% probabilidad crítica</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
