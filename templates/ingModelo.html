@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Análisis de Negocio{% endblock %}
+
+{% block content %}
+
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="text-center mb-5 display-4 text-primary">
+            <i class="fas fa-microchip me-3"></i>Ingeniería del Modelo
+        </h1>
+
+        <div class="row g-4">
+            <!-- Selección de Algoritmos -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card model-card shadow-sm h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">
+                            <i class="fas fa-list-check me-2"></i>Selección de Algoritmos
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">Elegir técnicas adecuadas según el problema y datos</p>
+                        <div class="sub-process">
+                            <h6 class="text-muted"><i class="fas fa-shield-check me-2"></i>Validación</h6>
+                            <p class="small mb-0">Verificar desempeño con datos no utilizados en entrenamiento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Entrenamiento -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card model-card shadow-sm h-100">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="mb-0">
+                            <i class="fas fa-brain me-2"></i>Entrenamiento
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">Aplicar datos preparados al algoritmo seleccionado</p>
+                        <ul class="list-unstyled small">
+                            <li class="mb-2"><i class="fas fa-circle-check text-success me-2"></i>Preparación de datos</li>
+                            <li class="mb-2"><i class="fas fa-circle-check text-success me-2"></i>Optimización inicial</li>
+                            <li><i class="fas fa-circle-check text-success me-2"></i>Evaluación preliminar</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ajuste de Hiperparámetros -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card model-card shadow-sm h-100">
+                    <div class="card-header bg-warning text-dark">
+                        <h4 class="mb-0">
+                            <i class="fas fa-sliders me-2"></i>Ajuste de Hiperparámetros
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">Optimizar configuraciones para mejorar rendimiento</p>
+                        <div class="bg-light p-2 rounded">
+                            <p class="small mb-1"><i class="fas fa-gear me-2"></i>Grid Search</p>
+                            <p class="small mb-1"><i class="fas fa-gear me-2"></i>Random Search</p>
+                            <p class="small mb-0"><i class="fas fa-gear me-2"></i>Bayesian Optimization</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proceso Complementario -->
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card model-card shadow-sm h-100">
+                    <div class="card-header bg-info text-white">
+                        <h4 class="mb-0">
+                            <i class="fas fa-chart-line me-2"></i>Evaluación Final
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="progress mb-3" style="height: 25px;">
+                            <div class="progress-bar bg-success" style="width: 85%">Precisión 85%</div>
+                        </div>
+                        <div class="progress" style="height: 25px;">
+                            <div class="progress-bar bg-primary" style="width: 92%">Recall 92%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

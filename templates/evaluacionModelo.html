@@ -1,0 +1,87 @@
+<!-- index.html -->
+{% extends "base.html" %}
+
+{% block title %}Análisis de Viabilidad{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+    <h1 class="text-center mb-5 display-4 text-primary">
+        <i class="fas fa-chart-line me-3"></i>Evaluación del Modelo
+    </h1>
+
+    <div class="row g-4">
+        <!-- Métricas de Desempeño -->
+        <div class="col-12 col-lg-6">
+            <div class="card eval-card shadow-sm h-100">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">
+                        <i class="fas fa-ruler-combined me-2"></i>Métricas de Desempeño
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <p class="lead">Selección y aplicación de indicadores apropiados según el tipo de problema</p>
+                    
+                    <div class="submetric">
+                        <h5><i class="fas fa-check-double text-success me-2"></i>Validación Cruzada</h5>
+                        <p class="small mb-0">Implementación de técnicas para evaluar capacidad de generalización</p>
+                    </div>
+
+                    <div class="submetric">
+                        <h5><i class="fas fa-exclamation-triangle text-warning me-2"></i>Análisis de Riesgos</h5>
+                        <p class="small mb-0">Identificación de sobreajuste, subajuste y sesgos</p>
+                    </div>
+
+                    <div class="submetric">
+                        <h5><i class="fas fa-users-gear text-info me-2"></i>Revisión con Expertos</h5>
+                        <p class="small mb-0">Validación de resultados con especialistas del dominio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Evaluación Integral -->
+        <div class="col-12 col-lg-6">
+            <div class="card eval-card shadow-sm h-100">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0">
+                        <i class="fas fa-clipboard-check me-2"></i>Evaluación Integral
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <div class="bg-light p-3 rounded">
+                                <h6><i class="fas fa-chart-pie me-2"></i>Métricas Clave</h6>
+                                <ul class="list-unstyled small">
+                                    <li class="mb-2">Precisión: 89%</li>
+                                    <li class="mb-2">Recall: 92%</li>
+                                    <li>F1-Score: 90%</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <div class="bg-light p-3 rounded">
+                                <h6><i class="fas fa-balance-scale me-2"></i>Validación</h6>
+                                <ul class="list-unstyled small">
+                                    <li class="mb-2">K-Fold (k=5)</li>
+                                    <li class="mb-2">Holdout 80/20</li>
+                                    <li>Curva ROC</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quote-box p-3 mt-4">
+                        <p class="small mb-0 text-muted">
+                            <i class="fas fa-quote-left me-2"></i>
+                            La evaluación rigurosa del modelo es esencial para garantizar su fiabilidad en entornos reales (KDnuggets, 2025)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
