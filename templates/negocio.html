@@ -13,10 +13,11 @@
                     <i class="fa-solid fa-bullseye"></i>
                 </div>
                 <div class="card-body">
+                    <h6>El propósito del proyecto es apoyar a la Casa de Justicia de Chía con un sistema inteligente que permita mejorar la atención ciudadana mediante la priorización efectiva de usuarios</h6>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item small">Maximizar rentabilidad de inversiones</li>
-                        <li class="list-group-item small">Optimizar procesos operativos</li>
-                        <li class="list-group-item small">Incrementar participación de mercado</li>
+                        <li class="list-group-item small">Reducir tiempos de espera prolongados, especialmente en casos críticos.</li>
+                        <li class="list-group-item small">Anticipar y gestionar la saturación del sistema, ajustando recursos humanos y técnicos.</li>
+                        <li class="list-group-item small">Priorizar la atención a poblaciones vulnerables, como personas en condición de discapacidad, mujeres víctimas de violencia, adultos mayores, entre otros.</li>
                     </ul>
                 </div>
             </div>
@@ -33,12 +34,24 @@
                         <div class="accordion-item">
                             <div class="accordion-header">
                                 <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#preguntaNegocio">
-                                    ¿Drivers de rentabilidad?
+                                    Preguntas orientandoras
                                 </button>
                             </div>
                             <div id="preguntaNegocio" class="accordion-collapse collapse">
                                 <div class="accordion-body small">
-                                    Análisis de correlación entre variables clave...
+                                    ¿Qué características (día, hora, perfil del usuario, tipo de trámite, historial de atención) están asociadas a tiempos de espera prolongados?
+                                </div>
+                                <div class="accordion-body small">
+                                    ¿Cuáles son los perfiles de usuarios que presentan mayor urgencia o vulnerabilidad?
+                                </div>
+                                <div class="accordion-body small">
+                                    ¿Se pueden predecir horas y días de mayor saturación del sistema?
+                                </div>
+                                <div class="accordion-body small">
+                                    ¿Qué tipo de casos requieren redirigirse a canales alternativos o recibir atención diferenciada?
+                                </div>
+                                <div class="accordion-body small">
+                                    ¿Cómo se puede clasificar en tiempo real a un usuario para asignarle una prioridad de atención?
                                 </div>
                             </div>
                         </div>
@@ -54,11 +67,12 @@
                     <h5 class="mb-0">Evaluación de Datos</h5>
                 </div>
                 <div class="card-body">
+                    <h7 class="mb-0">Casa de la justicia chía - https://www.datos.gov.co </h7>
                     <div class="progress mb-2" style="height: 20px;">
-                        <div class="progress-bar" style="width: 75%">Calidad 75%</div>
+                        <div class="progress-bar" style="width: 85%">Calidad 85%</div>
                     </div>
                     <div class="progress" style="height: 20px;">
-                        <div class="progress-bar bg-success" style="width: 90%">Completitud 90%</div>
+                        <div class="progress-bar bg-success" style="width: 75%">Completitud 75%</div>
                     </div>
                 </div>
             </div>
@@ -73,16 +87,29 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-4">
-                            <h6 class="text-muted">Técnica</h6>
-                            <p class="small mb-0">Evaluación recursos tecnológicos...</p>
+                            <h6 class="text-muted">Factores a Favor</h6>
+                            <ul>
+                                <li>Volumen adecuado de datos (alta frecuencia de atención).</li>
+                                <li>Posible categorización natural (tipo de trámite, perfil de usuario, tiempo de espera).</li>
+                                <li>Apoyo institucional si se mejora la eficiencia del servicio.</li>
+
+                            </ul>
                         </div>
                         <div class="col-md-4">
-                            <h6 class="text-muted">Económica</h6>
-                            <p class="small mb-0">ROI proyectado: $2.5M</p>
+                            <h6 class="text-muted">Limitaciones Potenciales</h6>
+                            <ul>
+                                <li>Datos sensibles: necesidad de garantizar anonimato y seguridad.</li>
+                                <li>Etiquetado de urgencia o vulnerabilidad puede requerir intervención humana.</li>
+                                <li>Cambios institucionales o administrativos pueden afectar la aplicación del modelo.</li>
+                                <li>Falta de digitalización o estandarización en algunos procesos.</li>
+                            </ul>
                         </div>
                         <div class="col-md-4">
-                            <h6 class="text-muted">Riesgos</h6>
-                            <p class="small mb-0">15% probabilidad crítica</p>
+                            <h6 class="text-muted">Viabilidad Técnica</h6>
+                            <ul>
+                                <li>Disponibilidad de herramientas y tecnologías para el análisis de datos.</li>
+                                <li>El modelo puede iniciarse como un sistema de clasificación supervisado con etiquetas como: “urgente”, “normal”, “bajo riesgo”.</li>
+                                <li>Acceso a plataformas de machine learning y análisis predictivo.</li>
                         </div>
                     </div>
                 </div>
