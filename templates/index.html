@@ -1,4 +1,3 @@
-<!-- index.html -->
 {% extends "base.html" %}
 
 {% block title %}Análisis de Viabilidad{% endblock %}
@@ -9,88 +8,109 @@
 
     <div class="row row-cols-1 row-cols-md-2 g-4">
 
-      <!-- Introducción -->
-      <div class="col">
-        <div class="card h-100 shadow-sm border-primary">
-          <div class="card-body">
-            <h5 class="card-title text-primary">Introducción</h5>
-            <p class="card-text">
-              Se desarrollará un sistema de priorización inteligente para la Casa de Justicia del municipio de Chía, con el objetivo de mejorar la atención oportuna, especialmente para poblaciones vulnerables. El sistema utilizará técnicas de aprendizaje automático supervisado, entrenadas con datos históricos de usuarios atendidos por distintas entidades del municipio. A partir de variables como edad, género, nacionalidad, entidad remitente, estrato socioeconómico y condición de víctima, el modelo calculará un puntaje de riesgo que permitirá identificar casos potencialmente críticos o con mayor urgencia de atención. Este proyecto busca dotar a la Casa de Justicia de una herramienta predictiva que optimice la gestión de turnos, anticipe momentos de alta demanda y contribuya a una asignación más justa y eficiente priorizando la atención de acuerdo con el riesgo y la vulnerabilidad del usuario.​
-            </p>
-          </div>
+        <!-- Introducción -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-primary">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseIntro" role="button" aria-expanded="false" aria-controls="collapseIntro">Introducción</a>
+                    </h5>
+                    <div class="collapse" id="collapseIntro">
+                        <div class="card-text" style="max-height: 200px; overflow-y: auto;">
+                            Se desarrollará un sistema de priorización inteligente para la Casa de Justicia del municipio de Chía, con el objetivo de mejorar la atención oportuna, especialmente para poblaciones vulnerables. El sistema utilizará técnicas de aprendizaje automático supervisado, entrenadas con datos históricos de usuarios atendidos por distintas entidades del municipio. A partir de variables como edad, género, nacionalidad, entidad remitente, estrato socioeconómico y condición de víctima, el modelo calculará un puntaje de riesgo que permitirá identificar casos potencialmente críticos o con mayor urgencia de atención. Este proyecto busca dotar a la Casa de Justicia de una herramienta predictiva que optimice la gestión de turnos, anticipe momentos de alta demanda y contribuya a una asignación más justa y eficiente priorizando la atención de acuerdo con el riesgo y la vulnerabilidad del usuario.
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <!-- Objetivos -->
-      <div class="col">
-        <div class="card h-100 shadow-sm border-success">
-          <div class="card-body">
-            <h5 class="card-title text-success">Objetivos </h5>
-            <h7 class="card-title text-success">Objetivos General</h7>
-            <ul class="card-text">
-                <li>Desarrollar un modelo de machine learning que permita proyectar el nivel de riesgo y urgencia de atención de los usuarios en la Casa de Justicia de Chía, con el fin de optimizar la gestión de turnos y garantizar una atención prioritaria a poblaciones vulnerables.</li>
-            </ul>
-            <h7 class="card-title text-success">Objetivos Especificos</h7>
-            <ul class="card-text">
-              <li>Recolectar y preprocesar los datos históricos de atención de usuarios en la Casa de Justicia de Chía, incluyendo variables demográficas, institucionales y socioeconómicas relevantes.</li>
-              <li>Aplicar los conocimientos teóricos y prácticos adquiridos en el curso de Machine Learning para desarrollar cada etapa del proyecto: análisis exploratorio, ingeniería de características, entrenamiento y validación del modelo.</li>
-              <li>Entrenar modelos de clasificación supervisada, como regresión logística, árboles de decisión o random forest, que permitan estimar un puntaje de riesgo por usuario.</li>
-              <li>Evaluar y comparar el desempeño de los modelos utilizando métricas como precisión, recall, F1-score y matriz de confusión, para seleccionar la solución más robusta.</li>
-              <li>Desarrollar una aplicación funcional basada en Flask que integre el modelo predictivo y exponga una API, permitiendo a los funcionarios visualizar el riesgo y tomar decisiones informadas en tiempo real.</li>
-            </ul>
-          </div>
+        <!-- Objetivos -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-success">
+                <div class="card-body">
+                    <h5 class="card-title text-success">
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseObjetivos" role="button" aria-expanded="false" aria-controls="collapseObjetivos">Objetivos</a>
+                    </h5>
+                    <div class="collapse" id="collapseObjetivos">
+                        <div class="card-text" style="max-height: 200px; overflow-y: auto;">
+                            <strong>Objetivo General:</strong>
+                            <ul>
+                                <li>Desarrollar un modelo de machine learning que permita proyectar el nivel de riesgo y urgencia de atención de los usuarios en la Casa de Justicia de Chía, con el fin de optimizar la gestión de turnos y garantizar una atención prioritaria a poblaciones vulnerables.</li>
+                            </ul>
+                            <strong>Objetivos Específicos:</strong>
+                            <ul>
+                                <li>Recolectar y preprocesar los datos históricos de atención de usuarios en la Casa de Justicia de Chía, incluyendo variables demográficas, institucionales y socioeconómicas relevantes.</li>
+                                <li>Aplicar los conocimientos teóricos y prácticos adquiridos en el curso de Machine Learning para desarrollar cada etapa del proyecto: análisis exploratorio, ingeniería de características, entrenamiento y validación del modelo.</li>
+                                <li>Entrenar modelos de clasificación supervisada, como regresión logística, árboles de decisión o random forest, que permitan estimar un puntaje de riesgo por usuario.</li>
+                                <li>Evaluar y comparar el desempeño de los modelos utilizando métricas como precisión, recall, F1-score y matriz de confusión, para seleccionar la solución más robusta.</li>
+                                <li>Desarrollar una aplicación funcional basada en Flask que integre el modelo predictivo y exponga una API, permitiendo a los funcionarios visualizar el riesgo y tomar decisiones informadas en tiempo real.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <!-- Justificación -->
-      <div class="col">
-        <div class="card h-100 shadow-sm border-warning">
-          <div class="card-body">
-            <h5 class="card-title text-warning">Justificación</h5>
-            <p class="card-text">
-              La Casa de Justicia del municipio de Chía atiende en promedio 4500 casos mensuales, reflejando una alta demanda de servicios por parte de la comunidad. Sin embargo, dicha demanda también genera retos importantes relacionados con la capacidad de respuesta, los tiempos de espera y la identificación oportuna de casos críticos que requieren atención prioritaria.​
+        <!-- Justificación -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-warning">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseJustificacion" role="button" aria-expanded="false" aria-controls="collapseJustificacion">Justificación</a>
+                    </h5>
+                    <div class="collapse" id="collapseJustificacion">
+                        <div class="card-text" style="max-height: 200px; overflow-y: auto;">
+                            La Casa de Justicia del municipio de Chía atiende en promedio 4500 casos mensuales, reflejando una alta demanda de servicios por parte de la comunidad. Sin embargo, dicha demanda también genera retos importantes relacionados con la capacidad de respuesta, los tiempos de espera y la identificación oportuna de casos críticos que requieren atención prioritaria.​
 
-Con el objetivo de mejorar la eficiencia institucional y garantizar una atención más justa e inclusiva, se plantea el desarrollo de un modelo de Machine Learning que permita calcular un puntaje de riesgo para cada usuario, a partir de variables como edad, género, nacionalidad, estrato socioeconómico, entidad remitente, y condición de víctima. Este modelo facilitará la identificación anticipada de casos urgentes o potencialmente vulnerables, permitiendo a los funcionarios tomar decisiones informadas y asignar recursos de manera más eficiente.​
+                            Con el objetivo de mejorar la eficiencia institucional y garantizar una atención más justa e inclusiva, se plantea el desarrollo de un modelo de Machine Learning que permita calcular un puntaje de riesgo para cada usuario, a partir de variables como edad, género, nacionalidad, estrato socioeconómico, entidad remitente, y condición de víctima. Este modelo facilitará la identificación anticipada de casos urgentes o potencialmente vulnerables, permitiendo a los funcionarios tomar decisiones informadas y asignar recursos de manera más eficiente.​
 
-Este proyecto no solo contribuye a optimizar la gestión interna de la Casa de Justicia, sino que también se alinea con el cumplimiento del ODS 16, al fortalecer los mecanismos de atención ciudadana y asegurar que ninguna persona quede rezagada en su derecho a recibir justicia oportuna y adecuada.​
-
-​
-            </p>
-          </div>
+                            Este proyecto no solo contribuye a optimizar la gestión interna de la Casa de Justicia, sino que también se alinea con el cumplimiento del ODS 16, al fortalecer los mecanismos de atención ciudadana y asegurar que ninguna persona quede rezagada en su derecho a recibir justicia oportuna y adecuada.​
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <!-- ODS -->
-      <div class="col">
-        <div class="card h-100 shadow-sm border-info">
-          <div class="card-body">
-            <h5 class="card-title text-info">Objetivos de Desarrollo Sostenible (ODS)</h5>
-            <ul class="card-text">
-              <li><strong>ODS 10:</strong> Reducción de las desigualdades en el acceso a la justicia.</li>
-              <li><strong>ODS 16:</strong> Paz, justicia e instituciones sólidas.</li>
-              <li><strong>ODS 9:</strong> Industria, innovación e infraestructura.</li>
-            </ul>
-          </div>
+        <!-- ODS -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-info">
+                <div class="card-body">
+                    <h5 class="card-title text-info">
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseODS" role="button" aria-expanded="false" aria-controls="collapseODS">Objetivos de Desarrollo Sostenible (ODS)</a>
+                    </h5>
+                    <div class="collapse" id="collapseODS">
+                        <div class="card-text" style="max-height: 200px; overflow-y: auto;">
+                            <ul>
+                                <li><strong>ODS 10:</strong> Reducción de las desigualdades en el acceso a la justicia.</li>
+                                <li><strong>ODS 16:</strong> Paz, justicia e instituciones sólidas.</li>
+                                <li><strong>ODS 9:</strong> Industria, innovación e infraestructura.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <!-- Planteamiento del problema -->
-      <div class="col">
-        <div class="card h-100 shadow-sm border-danger">
-          <div class="card-body">
-            <h5 class="card-title text-danger">Planteamiento del Problema</h5>
-            <p class="card-text">
-              En la Casa de Justicia del municipio de Chía, se atienden mensualmente más de 4500 casos relacionados con orientación jurídica, conciliación, protección a víctimas y otros servicios sociales. Esta alta demanda representa un desafío significativo para garantizar tiempos de atención adecuados y priorizar a los usuarios que se encuentran en condiciones de mayor vulnerabilidad.​
+        <!-- Planteamiento del problema -->
+        <div class="col-12">
+            <div class="card h-100 shadow-sm border-danger">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseProblema" role="button" aria-expanded="false" aria-controls="collapseProblema">Planteamiento del Problema</a>
+                    </h5>
+                    <div class="collapse" id="collapseProblema">
+                        <div class="card-text" style="max-height: 200px; overflow-y: auto;">
+                            En la Casa de Justicia del municipio de Chía, se atienden mensualmente más de 4500 casos relacionados con orientación jurídica, conciliación, protección a víctimas y otros servicios sociales. Esta alta demanda representa un desafío significativo para garantizar tiempos de atención adecuados y priorizar a los usuarios que se encuentran en condiciones de mayor vulnerabilidad.​
+                            Actualmente, la asignación de turnos y recursos se realiza de forma manual o secuencial, sin una herramienta técnica que permita anticipar situaciones críticas, como saturación del sistema o la llegada de usuarios en condición de riesgo. Esta falta de priorización automatizada puede traducirse en demoras injustas, especialmente para poblaciones sensibles como menores de edad, adultos mayores, mujeres víctimas de violencia, migrantes y personas desplazadas.​
 
-Actualmente, la asignación de turnos y recursos se realiza de forma manual o secuencial, sin una herramienta técnica que permita anticipar situaciones críticas, como saturación del sistema o la llegada de usuarios en condición de riesgo. Esta falta de priorización automatizada puede traducirse en demoras injustas, especialmente para poblaciones sensibles como menores de edad, adultos mayores, mujeres víctimas de violencia, migrantes y personas desplazadas.​
+                            Dado que el tiempo de atención y la oportunidad en la intervención son variables clave para la protección de derechos, desarrollar un mecanismo que permita identificar y clasificar de manera automatizada a los usuarios según su nivel de urgencia, que contribuya a la mejora del servicio, la eficiencia institucional y el cumplimiento del ODS 16.
 
-Dado que el tiempo de atención y la oportunidad en la intervención son variables clave para la protección de derechos, desarrollar un mecanismo que permita identificar y clasificar de manera automatizada a los usuarios según su nivel de urgencia, que contribuya a la mejora del servicio, la eficiencia institucional y el cumplimiento del ODS 16.
-            </p>
-          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
 
     </div>
-  </div>
-
+</div>
 {% endblock %}

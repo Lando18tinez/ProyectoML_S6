@@ -1,87 +1,124 @@
-<!-- index.html -->
 {% extends "base.html" %}
 
-{% block title %}Análisis de Viabilidad{% endblock %}
+{% block title %}Evaluación del Modelo{% endblock %}
 
 {% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-5">Evaluación del Modelo</h1>
 
-<div class="container py-5">
-    <h1 class="text-center mb-5 display-4 text-primary">
-        <i class="fas fa-chart-line me-3"></i>Evaluación del Modelo
-    </h1>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
 
-    <div class="row g-4">
         <!-- Métricas de Desempeño -->
-        <div class="col-12 col-lg-6">
-            <div class="card eval-card shadow-sm h-100">
-                <div class="card-header bg-primary text-white">
-                    <h4 class="mb-0">
-                        <i class="fas fa-ruler-combined me-2"></i>Métricas de Desempeño
-                    </h4>
-                </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-primary">
                 <div class="card-body">
-                    <p class="lead">Selección y aplicación de indicadores apropiados según el tipo de problema</p>
-                    
-                    <div class="submetric">
-                        <h5><i class="fas fa-check-double text-success me-2"></i>Validación Cruzada</h5>
-                        <p class="small mb-0">Implementación de técnicas para evaluar capacidad de generalización</p>
-                    </div>
+                    <h5 class="card-title text-primary">
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseMetricas" role="button" aria-expanded="false" aria-controls="collapseMetricas">Métricas de Desempeño</a>
+                    </h5>
+                    <div class="collapse" id="collapseMetricas">
+                        <div class="card-text" style="max-height: 200px; overflow-y: auto;">
+                            <p>Selección y aplicación de indicadores apropiados según el tipo de problema</p>
+                            
+                            <strong>Validación Cruzada:</strong>
+                            <p class="mb-2">Implementación de técnicas para evaluar capacidad de generalización</p>
 
-                    <div class="submetric">
-                        <h5><i class="fas fa-exclamation-triangle text-warning me-2"></i>Análisis de Riesgos</h5>
-                        <p class="small mb-0">Identificación de sobreajuste, subajuste y sesgos</p>
-                    </div>
+                            <strong>Análisis de Riesgos:</strong>
+                            <p class="mb-2">Identificación de sobreajuste, subajuste y sesgos</p>
 
-                    <div class="submetric">
-                        <h5><i class="fas fa-users-gear text-info me-2"></i>Revisión con Expertos</h5>
-                        <p class="small mb-0">Validación de resultados con especialistas del dominio</p>
+                            <strong>Revisión con Expertos:</strong>
+                            <p class="mb-0">Validación de resultados con especialistas del dominio</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Evaluación Integral -->
-        <div class="col-12 col-lg-6">
-            <div class="card eval-card shadow-sm h-100">
-                <div class="card-header bg-success text-white">
-                    <h4 class="mb-0">
-                        <i class="fas fa-clipboard-check me-2"></i>Evaluación Integral
-                    </h4>
-                </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-success">
                 <div class="card-body">
-                    <div class="row g-3">
-                        <div class="col-12 col-md-6">
-                            <div class="bg-light p-3 rounded">
-                                <h6><i class="fas fa-chart-pie me-2"></i>Métricas Clave</h6>
-                                <ul class="list-unstyled small">
-                                    <li class="mb-2">Precisión: 89%</li>
-                                    <li class="mb-2">Recall: 92%</li>
-                                    <li>F1-Score: 90%</li>
-                                </ul>
-                            </div>
-                        </div>
+                    <h5 class="card-title text-success">
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseEvaluacion" role="button" aria-expanded="false" aria-controls="collapseEvaluacion">Evaluación Integral</a>
+                    </h5>
+                    <div class="collapse" id="collapseEvaluacion">
+                        <div class="card-text" style="max-height: 200px; overflow-y: auto;">
+                            <strong>Métricas Clave:</strong>
+                            <ul>
+                                <li>Precisión: 89%</li>
+                                <li>Recall: 92%</li>
+                                <li>F1-Score: 90%</li>
+                            </ul>
 
-                        <div class="col-12 col-md-6">
-                            <div class="bg-light p-3 rounded">
-                                <h6><i class="fas fa-balance-scale me-2"></i>Validación</h6>
-                                <ul class="list-unstyled small">
-                                    <li class="mb-2">K-Fold (k=5)</li>
-                                    <li class="mb-2">Holdout 80/20</li>
-                                    <li>Curva ROC</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                            <strong>Validación:</strong>
+                            <ul>
+                                <li>K-Fold (k=5)</li>
+                                <li>Holdout 80/20</li>
+                                <li>Curva ROC</li>
+                            </ul>
 
-                    <div class="quote-box p-3 mt-4">
-                        <p class="small mb-0 text-muted">
-                            <i class="fas fa-quote-left me-2"></i>
-                            La evaluación rigurosa del modelo es esencial para garantizar su fiabilidad en entornos reales (KDnuggets, 2025)
-                        </p>
+                            <p class="mt-3"><em>La evaluación rigurosa del modelo es esencial para garantizar su fiabilidad en entornos reales (KDnuggets, 2025)</em></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Técnicas de Validación -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-warning">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseValidacion" role="button" aria-expanded="false" aria-controls="collapseValidacion">Técnicas de Validación</a>
+                    </h5>
+                    <div class="collapse" id="collapseValidacion">
+                        <div class="card-text" style="max-height: 200px; overflow-y: auto;">
+                            <strong>Validación Cruzada:</strong>
+                            <ul>
+                                <li>División de datos en k grupos para entrenamiento y prueba iterativa</li>
+                                <li>Evaluación de la capacidad de generalización del modelo</li>
+                                <li>Reducción del sesgo de selección de datos</li>
+                            </ul>
+                            
+                            <strong>Métricas de Clasificación:</strong>
+                            <ul>
+                                <li>Matriz de confusión para análisis detallado</li>
+                                <li>Curvas ROC y AUC para evaluación de rendimiento</li>
+                                <li>Análisis de falsos positivos y negativos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interpretabilidad del Modelo -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-info">
+                <div class="card-body">
+                    <h5 class="card-title text-info">
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseInterpretabilidad" role="button" aria-expanded="false" aria-controls="collapseInterpretabilidad">Interpretabilidad del Modelo</a>
+                    </h5>
+                    <div class="collapse" id="collapseInterpretabilidad">
+                        <div class="card-text" style="max-height: 200px; overflow-y: auto;">
+                            <strong>Feature Importance:</strong>
+                            <ul>
+                                <li>Identificación de variables más relevantes para la predicción</li>
+                                <li>Análisis de la contribución de cada característica</li>
+                                <li>Validación de la lógica del negocio con los resultados</li>
+                            </ul>
+                            
+                            <strong>Explicabilidad:</strong>
+                            <ul>
+                                <li>Generación de explicaciones comprensibles para usuarios finales</li>
+                                <li>Documentación de decisiones del modelo</li>
+                                <li>Transparencia en el proceso de clasificación</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 {% endblock %}

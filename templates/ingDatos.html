@@ -1,70 +1,139 @@
 {% extends "base.html" %}
 
-{% block title %}Análisis de Negocio{% endblock %}
+{% block title %}Ingeniería de Datos{% endblock %}
 
 {% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-5">Ingeniería de Datos</h1>
 
-<div class="container py-5">
-    <h1 class="text-center mb-5 display-4 text-primary">
-        <i class="fas fa-database me-3"></i>Ingeniería de Datos
-    </h1>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
 
-    <div class="row g-4">
         <!-- Selección -->
-        <div class="col-12 col-md-6 col-lg-3">
-            <div class="card data-card shadow-sm h-100">
-                <div class="card-header bg-primary text-white">
-                    <h4 class="mb-0">
-                        <i class="fas fa-magnifying-glass me-2"></i>Selección
-                    </h4>
-                </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-primary">
                 <div class="card-body">
-                    <p class="lead">Identificar fuentes de datos relevantes</p>
+                    <h5 class="card-title text-primary">
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseSeleccion" role="button" aria-expanded="false" aria-controls="collapseSeleccion">Selección de Datos</a>
+                    </h5>
+                    <div class="collapse" id="collapseSeleccion">
+                        <div class="card-text" style="max-height: 200px; overflow-y: auto;">
+                            <p>Identificar fuentes de datos relevantes para el modelo de priorización</p>
+                            
+                            <strong>Fuentes de Datos:</strong>
+                            <ul>
+                                <li>Registros históricos de usuarios atendidos en la Casa de Justicia</li>
+                                <li>Bases de datos de entidades remitentes</li>
+                                <li>Información demográfica y socioeconómica</li>
+                                <li>Registros de víctimas y poblaciones vulnerables</li>
+                            </ul>
+                            
+                            <strong>Variables Clave:</strong>
+                            <ul>
+                                <li>Edad, género, nacionalidad</li>
+                                <li>Estrato socioeconómico</li>
+                                <li>Entidad remitente</li>
+                                <li>Condición de víctima</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Limpieza -->
-        <div class="col-12 col-md-6 col-lg-3">
-            <div class="card data-card shadow-sm h-100">
-                <div class="card-header bg-success text-white">
-                    <h4 class="mb-0">
-                        <i class="fas fa-broom me-2"></i>Limpieza
-                    </h4>
-                </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-success">
                 <div class="card-body">
-                    <p class="lead">Corregir errores y gestionar valores faltantes</p>
+                    <h5 class="card-title text-success">
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseLimpieza" role="button" aria-expanded="false" aria-controls="collapseLimpieza">Limpieza de Datos</a>
+                    </h5>
+                    <div class="collapse" id="collapseLimpieza">
+                        <div class="card-text" style="max-height: 200px; overflow-y: auto;">
+                            <p>Corregir errores y gestionar valores faltantes para garantizar calidad de datos</p>
+                            
+                            <strong>Procesos de Limpieza:</strong>
+                            <ul>
+                                <li>Identificación y corrección de valores atípicos</li>
+                                <li>Manejo de datos faltantes mediante imputación</li>
+                                <li>Eliminación de registros duplicados</li>
+                                <li>Normalización de formatos de fecha y texto</li>
+                            </ul>
+                            
+                            <strong>Validación de Calidad:</strong>
+                            <ul>
+                                <li>Verificación de integridad referencial</li>
+                                <li>Comprobación de rangos válidos para variables numéricas</li>
+                                <li>Validación de categorías para variables categóricas</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Transformación -->
-        <div class="col-12 col-md-6 col-lg-3">
-            <div class="card data-card shadow-sm h-100">
-                <div class="card-header bg-warning text-dark">
-                    <h4 class="mb-0">
-                        <i class="fas fa-gears me-2"></i>Transformación
-                    </h4>
-                </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-warning">
                 <div class="card-body">
-                    <p class="lead">Crear nuevas características y normalizar datos</p>
+                    <h5 class="card-title text-warning">
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseTransformacion" role="button" aria-expanded="false" aria-controls="collapseTransformacion">Transformación</a>
+                    </h5>
+                    <div class="collapse" id="collapseTransformacion">
+                        <div class="card-text" style="max-height: 200px; overflow-y: auto;">
+                            <p>Crear nuevas características y normalizar datos para optimizar el rendimiento del modelo</p>
+                            
+                            <strong>Ingeniería de Características:</strong>
+                            <ul>
+                                <li>Codificación de variables categóricas (One-Hot Encoding)</li>
+                                <li>Normalización y estandarización de variables numéricas</li>
+                                <li>Creación de variables derivadas (edad en rangos, índices compuestos)</li>
+                                <li>Binning de variables continuas cuando sea apropiado</li>
+                            </ul>
+                            
+                            <strong>Preparación para ML:</strong>
+                            <ul>
+                                <li>División de conjuntos de entrenamiento y prueba</li>
+                                <li>Balanceado de clases si es necesario</li>
+                                <li>Selección de características más relevantes</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Documentación -->
-        <div class="col-12 col-md-6 col-lg-3">
-            <div class="card data-card shadow-sm h-100">
-                <div class="card-header bg-info text-white">
-                    <h4 class="mb-0">
-                        <i class="fas fa-file-lines me-2"></i>Documentación
-                    </h4>
-                </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-info">
                 <div class="card-body">
-                    <p class="lead">Registrar todas las transformaciones realizadas</p>
+                    <h5 class="card-title text-info">
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseDocumentacion" role="button" aria-expanded="false" aria-controls="collapseDocumentacion">Documentación</a>
+                    </h5>
+                    <div class="collapse" id="collapseDocumentacion">
+                        <div class="card-text" style="max-height: 200px; overflow-y: auto;">
+                            <p>Registrar todas las transformaciones realizadas para garantizar reproducibilidad y trazabilidad</p>
+                            
+                            <strong>Documentación del Proceso:</strong>
+                            <ul>
+                                <li>Registro detallado de cada transformación aplicada</li>
+                                <li>Justificación de decisiones de limpieza y transformación</li>
+                                <li>Métricas de calidad antes y después del procesamiento</li>
+                                <li>Scripts y código utilizado en cada etapa</li>
+                            </ul>
+                            
+                            <strong>Metadatos y Linaje:</strong>
+                            <ul>
+                                <li>Descripción de fuentes de datos originales</li>
+                                <li>Historial de cambios y versiones</li>
+                                <li>Diccionario de datos actualizado</li>
+                                <li>Procedimientos para replicar el procesamiento</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
 {% endblock %}
