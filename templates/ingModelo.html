@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}Ingeniería del Modelo{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-5">Ingeniería del Modelo</h1>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+
+        <!-- Selección de Algoritmos -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-primary">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseAlgoritmos" role="button" aria-expanded="false" aria-controls="collapseAlgoritmos">Selección de Algoritmos</a>
+                    </h5>
+                    <div class="collapse" id="collapseAlgoritmos">
+                        <div class="card-text" style="max-height: 200px; overflow-y: auto;">
+                            <p>Elegir técnicas adecuadas según el problema y características de los datos</p>
+                            
+                            <strong>Algoritmos Candidatos:</strong>
+                            <ul>
+                                <li>Regresión Logística - Para interpretabilidad y baseline</li>
+                                <li>Random Forest - Para manejo de variables categóricas y robustez</li>
+                                <li>Gradient Boosting - Para optimización de rendimiento</li>
+                                <li>Support Vector Machine - Para clasificación no lineal</li>
+                            </ul>
+                            
+                            <strong>Criterios de Selección:</strong>
+                            <ul>
+                                <li>Interpretabilidad del modelo</li>
+                                <li>Rendimiento en métricas clave</li>
+                                <li>Robustez ante datos desbalanceados</li>
+                                <li>Tiempo de entrenamiento y predicción</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Entrenamiento -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-success">
+                <div class="card-body">
+                    <h5 class="card-title text-success">
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseEntrenamiento" role="button" aria-expanded="false" aria-controls="collapseEntrenamiento">Entrenamiento</a>
+                    </h5>
+                    <div class="collapse" id="collapseEntrenamiento">
+                        <div class="card-text" style="max-height: 200px; overflow-y: auto;">
+                            <p>Aplicar datos preparados al algoritmo seleccionado para generar el modelo predictivo</p>
+                            
+                            <strong>Proceso de Entrenamiento:</strong>
+                            <ul>
+                                <li>Preparación de conjuntos de entrenamiento y validación</li>
+                                <li>Configuración inicial de hiperparámetros</li>
+                                <li>Entrenamiento iterativo con monitoreo de métricas</li>
+                                <li>Validación cruzada para evaluar generalización</li>
+                            </ul>
+                            
+                            <strong>Monitoreo Durante Entrenamiento:</strong>
+                            <ul>
+                                <li>Seguimiento de pérdida en entrenamiento y validación</li>
+                                <li>Detección temprana de sobreajuste</li>
+                                <li>Evaluación de convergencia</li>
+                                <li>Registro de métricas de rendimiento</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ajuste de Hiperparámetros -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-warning">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseHiperparametros" role="button" aria-expanded="false" aria-controls="collapseHiperparametros">Ajuste de Hiperparámetros</a>
+                    </h5>
+                    <div class="collapse" id="collapseHiperparametros">
+                        <div class="card-text" style="max-height: 200px; overflow-y: auto;">
+                            <p>Optimizar configuraciones del modelo para mejorar el rendimiento predictivo</p>
+                            
+                            <strong>Técnicas de Optimización:</strong>
+                            <ul>
+                                <li>Grid Search - Búsqueda exhaustiva en rejilla de parámetros</li>
+                                <li>Random Search - Búsqueda aleatoria eficiente</li>
+                                <li>Bayesian Optimization - Optimización inteligente basada en probabilidades</li>
+                                <li>Halving Grid Search - Búsqueda progresiva para eficiencia</li>
+                            </ul>
+                            
+                            <strong>Parámetros Clave a Optimizar:</strong>
+                            <ul>
+                                <li>Profundidad y número de árboles (Random Forest)</li>
+                                <li>Tasa de aprendizaje y regularización</li>
+                                <li>Número de características por división</li>
+                                <li>Criterios de división y poda</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Evaluación Final -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-info">
+                <div class="card-body">
+                    <h5 class="card-title text-info">
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseEvaluacionFinal" role="button" aria-expanded="false" aria-controls="collapseEvaluacionFinal">Evaluación Final</a>
+                    </h5>
+                    <div class="collapse" id="collapseEvaluacionFinal">
+                        <div class="card-text" style="max-height: 200px; overflow-y: auto;">
+                            <p>Validación integral del modelo optimizado para garantizar su rendimiento en producción</p>
+                            
+                            <strong>Métricas de Rendimiento Actuales:</strong>
+                            <ul>
+                                <li>Precisión: 85% - Proporción de predicciones correctas</li>
+                                <li>Recall: 92% - Capacidad de identificar casos positivos</li>
+                                <li>F1-Score: 88% - Balance entre precisión y recall</li>
+                                <li>AUC-ROC: 0.89 - Capacidad discriminativa del modelo</li>
+                            </ul>
+                            
+                            <strong>Validación Final:</strong>
+                            <ul>
+                                <li>Testing en conjunto de datos no visto durante desarrollo</li>
+                                <li>Análisis de casos edge y comportamientos extremos</li>
+                                <li>Validación con expertos del dominio</li>
+                                <li>Preparación para deployment en producción</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

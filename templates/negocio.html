@@ -1,92 +1,211 @@
-{% extends "base.html" %}
-
-{% block title %}Análisis de Negocio{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %}Análisis de Negocio{% endblock %} {%
+block content %}
 <div class="container mt-4">
-    <div class="row g-4">
-        <!-- Objetivos de Negocio (mitad de pantalla) -->
-        <div class="col-12 col-md-6">
-            <div class="card shadow-sm h-100">
-                <div class="card-header bg-primary text-white py-2">
-                    <h5 class="mb-0">🎯 Objetivos de Negocio</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item small">Maximizar rentabilidad de inversiones</li>
-                        <li class="list-group-item small">Optimizar procesos operativos</li>
-                        <li class="list-group-item small">Incrementar participación de mercado</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <h1 class="text-center mb-5">Entendimiento del Negocio</h1>
 
-        <!-- Preguntas Clave (mitad de pantalla) -->
-        <div class="col-12 col-md-6">
-            <div class="card shadow-sm h-100">
-                <div class="card-header bg-success text-white py-2">
-                    <h5 class="mb-0">🔑 Preguntas Clave</h5>
-                </div>
-                <div class="card-body">
-                    <div class="accordion accordion-flush">
-                        <div class="accordion-item">
-                            <div class="accordion-header">
-                                <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#preguntaNegocio">
-                                    ¿Drivers de rentabilidad?
-                                </button>
-                            </div>
-                            <div id="preguntaNegocio" class="accordion-collapse collapse">
-                                <div class="accordion-body small">
-                                    Análisis de correlación entre variables clave...
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <!-- Objetivos de Negocio -->
+    <div class="col">
+      <div class="card h-100 shadow-sm border-primary">
+        <div class="card-body">
+          <h5 class="card-title text-primary">
+            <a
+              class="text-decoration-none"
+              data-bs-toggle="collapse"
+              href="#collapseIntro"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseIntro"
+              >Objetivos de Negocio</a
+            >
+          </h5>
+          <div class="collapse" id="collapseIntro">
+            <div class="card-text" style="max-height: 200px; overflow-y: auto">
+              <h6>
+                El propósito del proyecto es apoyar a la Casa de Justicia de
+                Chía con un sistema inteligente que permita mejorar la atención
+                ciudadana mediante la priorización efectiva de usuarios
+              </h6>
+              <ul>
+                <li>
+                  Reducir tiempos de espera prolongados, especialmente en casos
+                  críticos.
+                </li>
+                <li>
+                  Anticipar y gestionar la saturación del sistema, ajustando
+                  recursos humanos y técnicos.
+                </li>
+                <li>
+                  Priorizar la atención a poblaciones vulnerables, como personas
+                  en condición de discapacidad, mujeres víctimas de violencia,
+                  adultos mayores, entre otros.
+                </li>
+              </ul>
             </div>
+          </div>
         </div>
-
-        <!-- Evaluación de Datos (tercio de pantalla) -->
-        <div class="col-12 col-md-4 mt-3">
-            <div class="card shadow-sm h-100">
-                <div class="card-header bg-warning py-2">
-                    <h5 class="mb-0">📊 Evaluación de Datos</h5>
-                </div>
-                <div class="card-body">
-                    <div class="progress mb-2" style="height: 20px;">
-                        <div class="progress-bar" style="width: 75%">Calidad 75%</div>
-                    </div>
-                    <div class="progress" style="height: 20px;">
-                        <div class="progress-bar bg-success" style="width: 90%">Completitud 90%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Análisis de Viabilidad (dos tercios) -->
-        <div class="col-12 col-md-8 mt-3">
-            <div class="card shadow-sm h-100">
-                <div class="card-header bg-danger text-white py-2">
-                    <h5 class="mb-0">📈 Análisis de Viabilidad</h5>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h6 class="text-muted">🔧 Técnica</h6>
-                            <p class="small mb-0">Evaluación recursos tecnológicos...</p>
-                        </div>
-                        <div class="col-md-4">
-                            <h6 class="text-muted">💵 Económica</h6>
-                            <p class="small mb-0">ROI proyectado: $2.5M</p>
-                        </div>
-                        <div class="col-md-4">
-                            <h6 class="text-muted">⚠️ Riesgos</h6>
-                            <p class="small mb-0">15% probabilidad crítica</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+
+    <!-- Preguntas Clave -->
+    <div class="col">
+      <div class="card h-100 shadow-sm border-success">
+        <div class="card-body">
+          <h5 class="card-title text-success">
+            <a
+              class="text-decoration-none"
+              data-bs-toggle="collapse"
+              href="#collapseObjetivos"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseObjetivos"
+              >Preguntas Clave
+            </a>
+          </h5>
+          <div class="collapse" id="collapseObjetivos">
+            <div class="card-text" style="max-height: 200px; overflow-y: auto">
+              <strong>Preguntas orientandoras:</strong>
+              <ul>
+                <li>
+                  ¿Qué características (día, hora, perfil del usuario, tipo de
+                  trámite, historial de atención) están asociadas a tiempos de
+                  espera prolongados?
+                </li>
+                <li>
+                  ¿Cuáles son los perfiles de usuarios que presentan mayor
+                  urgencia o vulnerabilidad?
+                </li>
+                <li>
+                  ¿Se pueden predecir horas y días de mayor saturación del
+                  sistema?
+                </li>
+                <li>
+                  ¿Qué tipo de casos requieren redirigirse a canales
+                  alternativos o recibir atención diferenciada?
+                </li>
+                <li>
+                  ¿Cómo se puede clasificar en tiempo real a un usuario para
+                  asignarle una prioridad de atención?
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Evaluación de Datos (tercio de pantalla) -->
+    <div class="col-12 col-md-4 mt-3">
+      <div class="card h-100 shadow-sm border-warning">
+        <div class="card-body">
+          <h5 class="card-title text-warning">
+            <a
+              class="text-decoration-none"
+              data-bs-toggle="collapse"
+              href="#collapseJustificacion"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseJustificacion"
+              >Evaluación de Datos</a
+            >
+          </h5>
+          <div class="collapse" id="collapseJustificacion">
+            <div class="card-text" style="max-height: 200px; overflow-y: auto">
+              Casa de la justicia chía - https://www.datos.gov.co
+              <div class="progress mb-2" style="height: 20px">
+                <div class="progress-bar" style="width: 85%">Calidad 85%</div>
+              </div>
+              <div class="progress" style="height: 20px">
+                <div class="progress-bar bg-success" style="width: 75%">
+                  Completitud 75%
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Análisis de Viabilidad -->
+    <div class="col-12 col-md-8 mt-3">
+      <div class="card h-100 shadow-sm border-danger">
+        <div class="card-body">
+          <h5 class="card-title text-danger">
+            <a
+              class="text-decoration-none"
+              data-bs-toggle="collapse"
+              href="#collapseProblema"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseProblema"
+            >
+              Análisis de Viabilidad
+            </a>
+          </h5>
+          <div class="collapse" id="collapseProblema">
+            <div class="card-text" style="max-height: 300px; overflow-y: auto">
+              <div class="row">
+                <div class="col-md-4">
+                  <h6 class="text-muted">Factores a Favor</h6>
+                  <ul>
+                    <li>
+                      Volumen adecuado de datos (alta frecuencia de atención).
+                    </li>
+                    <li>
+                      Posible categorización natural (tipo de trámite, perfil de
+                      usuario, tiempo de espera).
+                    </li>
+                    <li>
+                      Apoyo institucional si se mejora la eficiencia del
+                      servicio.
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-4">
+                  <h6 class="text-muted">Limitaciones Potenciales</h6>
+                  <ul>
+                    <li>
+                      Datos sensibles: necesidad de garantizar anonimato y
+                      seguridad.
+                    </li>
+                    <li>
+                      Etiquetado de urgencia o vulnerabilidad puede requerir
+                      intervención humana.
+                    </li>
+                    <li>
+                      Cambios institucionales o administrativos pueden afectar
+                      la aplicación del modelo.
+                    </li>
+                    <li>
+                      Falta de digitalización o estandarización en algunos
+                      procesos.
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-4">
+                  <h6 class="text-muted">Viabilidad Técnica</h6>
+                  <ul>
+                    <li>
+                      Disponibilidad de herramientas y tecnologías para el
+                      análisis de datos.
+                    </li>
+                    <li>
+                      El modelo puede iniciarse como un sistema de clasificación
+                      supervisado con etiquetas como: “urgente”, “normal”, “bajo
+                      riesgo”.
+                    </li>
+                    <li>
+                      Acceso a plataformas de machine learning y análisis
+                      predictivo.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}
