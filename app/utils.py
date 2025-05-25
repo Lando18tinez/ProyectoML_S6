@@ -55,7 +55,7 @@ def calcular_riesgo(df):
     return df
 def resaltar_riesgo(df):
     """
-    Aplica bordes y colores directamente con HTML embebido.
+    Aplica estilos condicionales y agrega apariencia de tabla Bootstrap.
     """
     def estilo_riesgo(val):
         if val >= 0.6:
@@ -64,6 +64,14 @@ def resaltar_riesgo(df):
             return 'background-color: yellow;'
         return ''
 
-    styled = df.style.applymap(estilo_riesgo, subset=['riesgo_score']) \
-                     .set_table_attributes('class="styled-risk-table"')
+    # Aplicar borde manual a todas las celdas
+    def estilo_general(val):
+        return 'border: 1px solid #dee2e6; padding: 6px;'
+
+    styled = df.style.applymap(estilo_general).applymap(estilo_riesgo, subset=['riesgo_score'])
+
+    # Establecer atributos similares a Bootstrap
+    styled.set_table_attributes('class="table table-bordered styled-risk-table"')
     return styled
+
+
