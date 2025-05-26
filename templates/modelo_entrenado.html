@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Entrenamiento del Modelo{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center mb-4">Entrenamiento del Modelo</h1>
+    <h5 class="text-success">Reporte de clasificación:</h5>
+    <pre>{{ reporte | tojson(indent=2) }}</pre>
+</div>
+{% endblock %}

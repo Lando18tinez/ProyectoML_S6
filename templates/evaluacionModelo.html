@@ -13,20 +13,20 @@
             <div class="card h-100 shadow-sm border-primary">
                 <div class="card-body">
                     <h5 class="card-title text-primary">
-                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseMetricas" role="button" aria-expanded="false" aria-controls="collapseMetricas">Métricas de Desempeño</a>
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseMetricas" role="button"
+                            aria-expanded="false" aria-controls="collapseMetricas">Métricas de Desempeño</a>
                     </h5>
                     <div class="collapse" id="collapseMetricas">
                         <div class="card-text" style="max-height: 200px; overflow-y: auto;">
-                            <p>Selección y aplicación de indicadores apropiados según el tipo de problema</p>
-                            
-                            <strong>Validación Cruzada:</strong>
-                            <p class="mb-2">Implementación de técnicas para evaluar capacidad de generalización</p>
-
-                            <strong>Análisis de Riesgos:</strong>
-                            <p class="mb-2">Identificación de sobreajuste, subajuste y sesgos</p>
-
-                            <strong>Revisión con Expertos:</strong>
-                            <p class="mb-0">Validación de resultados con especialistas del dominio</p>
+                            <p>Evaluación cuantitativa del rendimiento del modelo a partir del conjunto de prueba.</p>
+                            <ul>
+                                <li><strong>Accuracy:</strong> 99.45%</li>
+                                <li><strong>Recall (riesgo alto):</strong> 94.25%</li>
+                                <li><strong>F1-Score (riesgo alto):</strong> 97.04%</li>
+                                <li><strong>Precision (riesgo alto):</strong> 100%</li>
+                            </ul>
+                            <p>El modelo demuestra una alta capacidad para identificar correctamente a los usuarios con
+                                necesidad prioritaria de atención.</p>
                         </div>
                     </div>
                 </div>
@@ -38,25 +38,28 @@
             <div class="card h-100 shadow-sm border-success">
                 <div class="card-body">
                     <h5 class="card-title text-success">
-                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseEvaluacion" role="button" aria-expanded="false" aria-controls="collapseEvaluacion">Evaluación Integral</a>
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseEvaluacion"
+                            role="button" aria-expanded="false" aria-controls="collapseEvaluacion">Evaluación
+                            Integral</a>
                     </h5>
                     <div class="collapse" id="collapseEvaluacion">
                         <div class="card-text" style="max-height: 200px; overflow-y: auto;">
                             <strong>Métricas Clave:</strong>
                             <ul>
-                                <li>Precisión: 89%</li>
-                                <li>Recall: 92%</li>
-                                <li>F1-Score: 90%</li>
+                                <li>Accuracy: 99.45%</li>
+                                <li>Recall clase 1 (riesgo alto): 94.25%</li>
+                                <li>F1-Score clase 1: 97.04%</li>
                             </ul>
 
                             <strong>Validación:</strong>
                             <ul>
-                                <li>K-Fold (k=5)</li>
-                                <li>Holdout 80/20</li>
-                                <li>Curva ROC</li>
+                                <li>División de entrenamiento/prueba 80/20</li>
+                                <li>Evaluación en datos no vistos</li>
+                                <li>Balance entre sensibilidad y precisión</li>
                             </ul>
 
-                            <p class="mt-3"><em>La evaluación rigurosa del modelo es esencial para garantizar su fiabilidad en entornos reales (KDnuggets, 2025)</em></p>
+                            <p class="mt-3"><em>La evaluación rigurosa es clave para garantizar la fiabilidad del modelo
+                                    en contextos de atención ciudadana.</em></p>
                         </div>
                     </div>
                 </div>
@@ -68,21 +71,23 @@
             <div class="card h-100 shadow-sm border-warning">
                 <div class="card-body">
                     <h5 class="card-title text-warning">
-                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseValidacion" role="button" aria-expanded="false" aria-controls="collapseValidacion">Técnicas de Validación</a>
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseValidacion"
+                            role="button" aria-expanded="false" aria-controls="collapseValidacion">Técnicas de
+                            Validación</a>
                     </h5>
                     <div class="collapse" id="collapseValidacion">
                         <div class="card-text" style="max-height: 200px; overflow-y: auto;">
                             <strong>Validación Cruzada:</strong>
                             <ul>
-                                <li>División de datos en k grupos para entrenamiento y prueba iterativa</li>
-                                <li>Evaluación de la capacidad de generalización del modelo</li>
-                                <li>Reducción del sesgo de selección de datos</li>
+                                <li>Aplicación de K-Fold (k=5)</li>
+                                <li>Evaluación estable en diferentes particiones del conjunto de datos</li>
+                                <li>Evita sobreajuste a subconjuntos específicos</li>
                             </ul>
-                            
+
                             <strong>Métricas de Clasificación:</strong>
                             <ul>
-                                <li>Matriz de confusión para análisis detallado</li>
-                                <li>Curvas ROC y AUC para evaluación de rendimiento</li>
+                                <li>Matriz de confusión</li>
+                                <li>Curvas ROC y AUC estimadas</li>
                                 <li>Análisis de falsos positivos y negativos</li>
                             </ul>
                         </div>
@@ -96,29 +101,40 @@
             <div class="card h-100 shadow-sm border-info">
                 <div class="card-body">
                     <h5 class="card-title text-info">
-                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseInterpretabilidad" role="button" aria-expanded="false" aria-controls="collapseInterpretabilidad">Interpretabilidad del Modelo</a>
+                        <a class="text-decoration-none" data-bs-toggle="collapse" href="#collapseInterpretabilidad"
+                            role="button" aria-expanded="false"
+                            aria-controls="collapseInterpretabilidad">Interpretabilidad del Modelo</a>
                     </h5>
                     <div class="collapse" id="collapseInterpretabilidad">
                         <div class="card-text" style="max-height: 200px; overflow-y: auto;">
-                            <strong>Feature Importance:</strong>
+                            <strong>Importancia de Características:</strong>
                             <ul>
-                                <li>Identificación de variables más relevantes para la predicción</li>
-                                <li>Análisis de la contribución de cada característica</li>
-                                <li>Validación de la lógica del negocio con los resultados</li>
+                                <li>Visualización de variables más influyentes en la predicción</li>
+                                <li>Verificación de consistencia con factores sociales clave (edad, entidad remitente,
+                                    tipo de víctima)</li>
+                                <li>Validación de lógica de decisiones automáticas</li>
                             </ul>
-                            
+
                             <strong>Explicabilidad:</strong>
                             <ul>
-                                <li>Generación de explicaciones comprensibles para usuarios finales</li>
-                                <li>Documentación de decisiones del modelo</li>
-                                <li>Transparencia en el proceso de clasificación</li>
+                                <li>Diseño del modelo transparente y comprensible</li>
+                                <li>Preparado para integración en entornos con trazabilidad de decisiones</li>
+                                <li>Documentación del proceso completo de entrenamiento</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        <div class="text-center mt-4">
+            <h5 class="text-primary">Matriz de Confusión</h5>
+            <img src="{{ url_for('static', filename='img/matriz_confusion.png') }}" class="img-fluid"
+                alt="Matriz de Confusión">
+        </div>
+        <div class="text-center mt-4">
+            <h5 class="text-success">Curva ROC</h5>
+            <img src="{{ url_for('static', filename='img/curva_roc.png') }}" class="img-fluid" alt="Curva ROC">
+        </div>
     </div>
 </div>
 {% endblock %}
