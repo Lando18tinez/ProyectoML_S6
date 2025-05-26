@@ -12,6 +12,7 @@ def create_app():
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')  # Ej. postgresql://user:pass@localhost/db
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data/base.db'
 
     db.init_app(app)
     migrate.init_app(app, db)

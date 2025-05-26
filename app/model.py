@@ -4,6 +4,8 @@ from sklearn.metrics import classification_report
 import pandas as pd
 import joblib
 import os
+import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, roc_curve, auc
 
 def entrenar_modelo():
     ruta = os.path.abspath("data/datos_procesados.xlsx")
@@ -40,4 +42,39 @@ def entrenar_modelo():
     # Guardar modelo
     joblib.dump(best_model, os.path.abspath("modelos/modelo_entrenado.pkl"))
 
+    graficar_matriz_roc(best_model, X_test, y_test)
     return reporte
+
+def graficar_matriz_roc(modelo, X_test, y_test):
+    import matplotlib.pyplot as plt
+    from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, roc_curve, auc
+
+    # Crear carpeta static/img desde la raíz del proyecto
+    static_img_path = os.path.abspath(os.path.join("static", "img"))
+    os.makedirs(static_img_path, exist_ok=True)
+
+    matriz_path = os.path.join(static_img_path, "matriz_confusion.png")
+    roc_path = os.path.join(static_img_path, "curva_roc.png")
+
+    # MATRIZ DE CONFUSIÓN
+    cm = confusion_matrix(y_test, modelo.predict(X_test))
+    disp = ConfusionMatrixDisplay(confusion_matrix=cm)
+    disp.plot()
+    plt.title("Matriz de Confusión")
+    plt.savefig(matriz_path)
+    print(f"[✔] Matriz guardada en: {matriz_path} - ¿Existe?: {os.path.exists(matriz_path)}")
+    plt.close()
+
+    # CURVA ROC
+    y_score = modelo.predict_proba(X_test)[:, 1]
+    fpr, tpr, _ = roc_curve(y_test, y_score)
+    roc_auc = auc(fpr, tpr)
+    plt.plot(fpr, tpr, label=f"AUC = {roc_auc:.2f}")
+    plt.plot([0, 1], [0, 1], linestyle="--")
+    plt.xlabel("False Positive Rate")
+    plt.ylabel("True Positive Rate")
+    plt.title("Curva ROC")
+    plt.legend()
+    plt.savefig(roc_path)
+    print(f"[✔] ROC guardada en: {roc_path} - ¿Existe?: {os.path.exists(roc_path)}")
+    plt.close()
