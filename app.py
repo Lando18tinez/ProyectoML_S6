@@ -34,6 +34,10 @@ def ingModelo():
 def evaluacionModelo():
     return render_template("evaluacionModelo.html") 
 
+@app.route("/despliegue")
+def despliegue():
+    return render_template("despliegue.html") 
+
 # siempre al final del archivo
 if __name__ == '__main__':
     app.run(debug=True)
