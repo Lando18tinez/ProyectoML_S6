@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Evaluar Riesgo del Usuario</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container my-5">
+  <h2 class="mb-4">Evaluar Riesgo del Usuario</h2>
+
+  <form id="formulario-usuario">
+    <div class="mb-3">
+      <label class="form-label">Grupo Etario</label>
+      <select class="form-select" id="GrupoEtario">
+        <option>12 y 17</option>
+        <option>18 y 26</option><option>27 y 40</option><option>41 y 55</option>
+        <option>56 y 63</option><option>64</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Sexo</label>
+      <select class="form-select" id="Sexo">
+        <option>Mujer</option><option>Hombre</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Estrato</label>
+      <select class="form-select" id="Estrato">
+        <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Nacionalidad</label>
+      <select class="form-select" id="Nacionalidad">
+        <option>Colombiano</option><option>Extranjero</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Entidad</label>
+      <select class="form-select" id="Entidad">
+        <option value="04">Inspección de Policía</option>
+        <option value="05">Personería / Defensoría</option>
+        <option value="09">Instituto de Medicina Legal</option>
+        <option value="26" selected>Comisaría de Familia</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Motivo</label>
+      <select class="form-select" id="Motivo"></select>
+    </div>
+
+    <div id="indicadoresMotivo" class="mb-3 mt-2"></div>
+
+    <button type="submit" class="btn btn-primary mt-3">Evaluar Riesgo</button>
+  </form>
+
+  <div id="resultado" class="mt-4"></div>
+</div>
+
+<script>
+const motivosPorEntidad = {
+  "04": ["04 Orden de Policía", "04 Mediación policial", "04 Curso pedagógico"],
+  "05": ["05 Recepción declaración desplazados", "05 Derechos de petición", "05 Orientación a víctimas"],
+  "09": ["09 Informe pericial sobre lesiones"],
+  "26": [
+    "26 Abandono de adulto mayor", "26 Asistencia psicológica", "26 Asistencia social",
+    "26 Recepción de denuncias por delitos contra NNA", "26 Relaciones conflictivas familiares",
+    "26 Violencia física", "26 Violencia física y patrimonial", "26 Violencia física y psicológica",
+    "26 Violencia física, psicológica y sexual", "26 Violencia patrimonial", "26 Violencia psicológica"
+  ]
+};
+
+const motivosViolencia = [
+  "05 Orientación a víctimas", "09 Informe pericial sobre lesiones",
+  "26 Asistencia psicológica", "26 Asistencia social",
+  "26 Recepción de denuncias por delitos contra NNA", "26 Relaciones conflictivas familiares",
+  "26 Violencia física", "26 Violencia física y patrimonial", "26 Violencia física y psicológica",
+  "26 Violencia física, psicológica y sexual", "26 Violencia patrimonial", "26 Violencia psicológica"
+];
+const motivosConflicto = ["05 Recepción declaración desplazados"];
+const motivosAbandono = ["26 Abandono de adulto mayor"];
+
+const entidadSelect = document.getElementById("Entidad");
+const motivoSelect = document.getElementById("Motivo");
+
+entidadSelect.addEventListener("change", () => {
+  const entidad = entidadSelect.value;
+  motivoSelect.innerHTML = "";
+  motivosPorEntidad[entidad].forEach(m => {
+    const option = document.createElement("option");
+    option.textContent = m;
+    motivoSelect.appendChild(option);
+  });
+  motivoSelect.dispatchEvent(new Event('change'));
+});
+entidadSelect.dispatchEvent(new Event('change'));
+
+document.getElementById("Motivo").addEventListener("change", function () {
+  const motivo = this.value;
+  const contenedor = document.getElementById("indicadoresMotivo");
+  contenedor.innerHTML = "";
+
+  if (motivosViolencia.includes(motivo)) {
+    contenedor.innerHTML += '<span class="badge bg-danger me-2">Víctima de Violencia</span>';
+  }
+  if (motivosConflicto.includes(motivo)) {
+    contenedor.innerHTML += '<span class="badge bg-warning text-dark me-2">Víctima del Conflicto</span>';
+  }
+  if (motivosAbandono.includes(motivo)) {
+    contenedor.innerHTML += '<span class="badge bg-secondary">Abandono</span>';
+  }
+});
+
+function calcularScore(datos) {
+  let score = 0.0;
+
+  const grupoRiesgo = ["12 y 17", "64"];
+  if (grupoRiesgo.includes(datos["Grupo Etario"])) score += 0.2;
+
+  if (datos["Sexo"].toLowerCase() === "mujer") score += 0.1;
+  if (motivosViolencia.includes(datos["Motivo"])) score += 0.2;
+  if (motivosConflicto.includes(datos["Motivo"])) score += 0.2;
+  if (["Comisaría", "Policía", "Defensoría"].some(ent => datos["Entidad"].includes(ent))) score += 0.1;
+  if (datos["Estrato"].toLowerCase().includes("1")) score += 0.1;
+  if (datos["Nacionalidad"].toLowerCase() !== "colombiano") score += 0.1;
+
+  return Math.round(score * 100) / 100;
+}
+
+function clasificarRiesgo(score) {
+  if (score >= 0.4 ) return { nivel: "ALTO", color: "danger" };
+  if (score >= 0.2 && score <= 0.3) return { nivel: "MODERADO", color: "warning" };
+  return { nivel: "BAJO", color: "success" };
+}
+
+document.getElementById("formulario-usuario").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const datos = {
+    "Grupo Etario": document.getElementById("GrupoEtario").value,
+    "Sexo": document.getElementById("Sexo").value,
+    "Estrato": document.getElementById("Estrato").value,
+    "Nacionalidad": document.getElementById("Nacionalidad").value,
+    "Entidad": document.getElementById("Entidad").value,
+    "Motivo": document.getElementById("Motivo").value
+  };
+
+  const score = calcularScore(datos);
+  const clasificacion = clasificarRiesgo(score);
+
+  document.getElementById("resultado").innerHTML = `
+    <div class="alert alert-${clasificacion.color}">
+      Riesgo ${clasificacion.nivel} (${score} puntos)
+    </div>`;
+});
+</script>
+</body>
+</html>
