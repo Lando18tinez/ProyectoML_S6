@@ -34,6 +34,12 @@ def ingModelo():
 def evaluacionModelo():
     return render_template("evaluacionModelo.html") 
 
-# siempre al final del archivo
+@app.route("/despliegue")
+def despliegue():
+    return render_template("despliegue.html") 
+
+
 if __name__ == '__main__':
     app.run(debug=True)
+
+# This is the main entry point for the Flask application.
